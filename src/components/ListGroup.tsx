@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 
+//! interface are used to define the shape of Props
 interface Props {
   items: string[];
   heading: string;
