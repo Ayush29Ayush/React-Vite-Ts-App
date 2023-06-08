@@ -1,9 +1,10 @@
 // import { Fragment } from "react";
+import { MouseEvent } from "react";
 
 function ListGroup() {
   // const items = ["Delhi", "Bhubaneshwar", "Kolkata", "Gurugram"];
-  let items = ["Delhi", "Bhubaneshwar", "Kolkata", "Gurugram"];
-  items = [];
+  const items = ["Delhi", "Bhubaneshwar", "Kolkata", "Gurugram"];
+  // items = [];
 
   // Normal Rendering
   // if (items.length === 0)
@@ -22,6 +23,13 @@ function ListGroup() {
   //   return items.length === 0 ? <p>No item found</p> : null
   // }
 
+  //! Event Handler
+  // const handleClick = (item: string) => {console.log(`Clicked ${item}`)}
+  //? We have to provide the datatype along with the argument name when passing to the function. Ex -> Event: MouseEvent. here Event is the argument name and MouseEvent is its type.
+  const handleClick = (Event: MouseEvent) => {
+    console.log(Event);
+  };
+
   return (
     // <Fragment></Fragment>
     <>
@@ -39,7 +47,14 @@ function ListGroup() {
         <li className="list-group-item">A fourth item</li>
         <li className="list-group-item">And a fifth one</li> */}
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li
+            className="list-group-item"
+            key={item}
+            // onClick={() => console.log(`Clicked ${item}`)}
+            onClick={handleClick}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </>
