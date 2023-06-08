@@ -21,7 +21,7 @@ function App() {
       {/* //! If text are in long format, passing text parameter is not appropriate. */}
       {/* //! So we use <Alert></Alert> and pass our text here and set our prop type to {text: string}*/}
       <Alert>
-        Hello <span>Ayush</span>
+        Hello <span className="text-danger">Ayush</span>
       </Alert>
     </div>
   );
