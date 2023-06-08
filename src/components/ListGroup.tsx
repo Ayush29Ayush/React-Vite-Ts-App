@@ -6,12 +6,14 @@ import { useState } from "react";
 interface Props {
   items: string[];
   heading: string;
+  // onSelectItem here implementedis will be similar to onClick but will be according to the syntax of TypeScript
+  onSelectItem: (item: string) => void;
 }
 
 // function ListGroup(props: Props) {
-function ListGroup({items, heading}: Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   // const items = ["Delhi", "Bhubaneshwar", "Kolkata", "Gurugram"];
-  
+
   // items = [];
   // let selectedIndexVariableAyush = 0; //! This is a local variable so onClick can not change its value.
   //! To solve this issue, we need React Hook called useState
@@ -74,6 +76,7 @@ function ListGroup({items, heading}: Props) {
             // onClick={handleClick}
             onClick={() => {
               SetselectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}
