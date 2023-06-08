@@ -3,9 +3,15 @@
 
 import { useState } from "react";
 
-function ListGroup() {
+interface Props {
+  items: string[];
+  heading: string;
+}
+
+// function ListGroup(props: Props) {
+function ListGroup({items, heading}: Props) {
   // const items = ["Delhi", "Bhubaneshwar", "Kolkata", "Gurugram"];
-  const items = ["Delhi", "Bhubaneshwar", "Kolkata", "Gurugram"];
+  
   // items = [];
   // let selectedIndexVariableAyush = 0; //! This is a local variable so onClick can not change its value.
   //! To solve this issue, we need React Hook called useState
@@ -40,10 +46,11 @@ function ListGroup() {
   return (
     // <Fragment></Fragment>
     <>
-      <h1>My List Heading</h1>
+      <h1>My {heading}</h1>
       {/* //! Conditional Rendering */}
       {/* { items.length===0 ? <p>No item found</p> : null } */}
       {/* //! We can also use AND gate logic i.e (1 && 'A' => 'A') */}
+      {/* {props.items.length === 0 && <p>No item found</p>} */}
       {items.length === 0 && <p>No item found</p>}
       {/* {message} */}
       {/* {getMessage()} */}
@@ -53,6 +60,7 @@ function ListGroup() {
         <li className="list-group-item">A third item</li>
         <li className="list-group-item">A fourth item</li>
         <li className="list-group-item">And a fifth one</li> */}
+        {/* {props.items.map((item, index) => ( */}
         {items.map((item, index) => (
           <li
             // className="list-group-item active"
