@@ -2,6 +2,7 @@
 // import ListGroup from "./components/ListGroup";
 
 import Alert from "./components/Alert";
+import MyButton from "./components/MyButton";
 
 function App() {
   // const items = ["Delhi", "Bhubaneshwar", "Kolkata", "Gurugram"];
@@ -23,6 +24,8 @@ function App() {
       <Alert>
         Hello <span className="text-danger">Ayush</span>
       </Alert>
+      <br />
+      <MyButton abcxyz={"Ayush Senapati"} />
     </div>
   );
 }
